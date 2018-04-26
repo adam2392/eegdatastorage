@@ -28,6 +28,9 @@ def db_connect():
     Performs database connection using database settings from settings.py.
     Returns sqlalchemy engine instance
     """
+    dbdir = '/Users/adam2392/Documents/eegdatastorage/datainterface/__db__/'
+    if not os.path.exists(dbdir):
+        os.makedirs(dbdir)
     DATABASE_PATH = 'sqlite:////Users/adam2392/Documents/eegdatastorage/datainterface/__db__/master.sqlite'
     # create a sqlite database that runs in memory
     # engine = create_engine('sqlite:///:memory:', echo=True)
